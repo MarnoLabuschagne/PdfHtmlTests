@@ -37,7 +37,7 @@ Hello @Model.Name
             return Content;
         }
 
-        public static void printWeirdLongContent(string name, int recursions)
+        public static void printTemplate(string name, int recursions)
         {
             IRazorEngine razorEngine = new RazorEngine();
             IRazorEngineCompiledTemplate template = razorEngine.Compile(razorTemplate.weirdLongContent());
@@ -66,6 +66,68 @@ Hello @Model.Name
             });
 
             Console.WriteLine(result);
+        }
+
+        public static void saveHelloTemplateToStream(string name)
+        {
+            IRazorEngine razorEngine = new RazorEngine();
+            IRazorEngineCompiledTemplate template = razorEngine.Compile("Hello @Model.Name");
+
+            MemoryStream memStrm = new MemoryStream();
+            template.SaveToStream(memStrm);
+            template.Run(new { Name = name });
+            Console.WriteLine(memStrm.ToString());
+        }
+
+        public static void saveHelloTemplate(string file)
+        {
+            IRazorEngine razorEngine = new RazorEngine();
+            IRazorEngineCompiledTemplate template = razorEngine.Compile("Hello @Model.Name");
+
+            template.SaveToFile(file);
+        }
+
+        public static void loadHelloTemplate(string name, string file)
+        {
+            try
+            {
+                IRazorEngineCompiledTemplate loadedTemplate = RazorEngineCompiledTemplate.LoadFromFile(file);
+                string result = loadedTemplate.Run(new { Name = name });
+                Console.WriteLine(result);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void saveLongTemplate(string file)
+        {
+            IRazorEngine razorEngine = new RazorEngine();
+            IRazorEngineCompiledTemplate template = razorEngine.Compile(weirdLongContent());
+
+            template.SaveToFile(file);
+        }
+        public static void loadLongTemplate(string file, string name, int recursions)
+        {
+            try
+            {
+                IRazorEngineCompiledTemplate loadedTemplate = RazorEngineCompiledTemplate.LoadFromFile(file);
+                string result = loadedTemplate.Run(new { 
+                    Name = name,
+                    Items = new List<string>()
+                        {
+                            "item 1",
+                            "item 2"
+                        },
+                    Recursions = recursions
+                });
+
+                Console.WriteLine(result);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
