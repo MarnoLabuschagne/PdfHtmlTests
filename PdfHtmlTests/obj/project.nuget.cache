@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qja6ZsiatRQ06TIKh4d/f/d+bo2i4vec1oaYG+kl8cliDQauLdEUjJD8xu2AYMafZ6r3R/Agu6GGE7gS4xvAKg==",
+  "dgSpecHash": "dClThQzej8LTC/0ihPoivmXkgUlE9yjm9CDzQJrzwbyqu2Au1K23Ldy1aU2IHEpNDGuB9sqnA4uXXIU7miCdPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\malabuschagne\\source\\repos\\PdfHtmlTests\\PdfHtmlTests\\PdfHtmlTests.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\malabuschagne\\.nuget\\packages\\microsoft.codeanalysis.common\\4.0.1\\microsoft.codeanalysis.common.4.0.1.nupkg.sha512",
     "C:\\Users\\malabuschagne\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.0.1\\microsoft.codeanalysis.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\malabuschagne\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\malabuschagne\\.nuget\\packages\\nreco.pdfgenerator\\1.2.1\\nreco.pdfgenerator.1.2.1.nupkg.sha512",
     "C:\\Users\\malabuschagne\\.nuget\\packages\\pdfpig\\0.1.7\\pdfpig.0.1.7.nupkg.sha512",
     "C:\\Users\\malabuschagne\\.nuget\\packages\\razorenginecore\\2022.8.1\\razorenginecore.2022.8.1.nupkg.sha512",
     "C:\\Users\\malabuschagne\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

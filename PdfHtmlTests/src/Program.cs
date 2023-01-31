@@ -23,35 +23,38 @@ namespace PdfHtmlTests.src
                     Console.WriteLine(pdfPig.getAllText(docPath[1]));
                     pdfPig.printWords(docPath[0]);
                     break;
-                case 2:
-                    razorTemplate.helloTemplatePrint("2Marno");
+                case 11:
+                    razorTemplate.helloTemplatePrint("11Marno");
                     break;
-                case 3:
-                    razorTemplate.printTemplate("3Marno", 4);
+                case 12:
+                    razorTemplate.printTemplate("12Marno", 4);
                     break;
-                case 4:
-                    razorTemplate.saveHelloTemplateToStream("4Marno");
+                case 13:
+                    razorTemplate.saveHelloTemplateToStream("13Marno");
                     break;
-                case 5:
-                    razorTemplate.saveHelloTemplate("helloTemplate.dll");
+                case 14:
+                    razorTemplate.saveHelloTemplate("helloTemplate.html");
                     break;
-                case 6:
-                    razorTemplate.loadHelloTemplate("6Marno", "helloTemplate.dll");
+                case 15:
+                    razorTemplate.loadHelloTemplate("15Marno", "helloTemplate.html");
                     break;
-                case 7:
+                case 16:
                     razorTemplate.saveLongTemplate("basicTestTemplate2.dll");
                     break;
-                case 8:
-                    razorTemplate.loadLongTemplate("basicTestTemplate2.dll", "8Marno", 5);
+                case 17:
+                    razorTemplate.loadLongTemplate("basicTestTemplate2.dll", "17Marno", 5);
+                    break;
+                case 21:
+                    NRecoPdfGenerator.helloWorld();
+                    break;
+                case 22:
+                    var template = razorTemplate.getTemplate("basicTestTemplate2.dll");
+                    NRecoPdfGenerator.htmlTemplateToPdf("helloTemplate.pdf", "helloTemplate.html");
                     break;
                 default:
                     break;
             }
-
-
-            
-
-
+            Console.ReadLine();
         }
     }
 }

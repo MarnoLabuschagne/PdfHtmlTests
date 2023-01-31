@@ -51,3 +51,4 @@ C:\Users\malabuschagne\source\repos\PdfHtmlTests\PdfHtmlTests\bin\Debug\net6.0\r
 C:\Users\malabuschagne\source\repos\PdfHtmlTests\PdfHtmlTests\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\malabuschagne\source\repos\PdfHtmlTests\PdfHtmlTests\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\malabuschagne\source\repos\PdfHtmlTests\PdfHtmlTests\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\malabuschagne\source\repos\PdfHtmlTests\PdfHtmlTests\bin\Debug\net6.0\NReco.PdfGenerator.dll

@@ -36,7 +36,19 @@ Hello @Model.Name
 }";
             return Content;
         }
-
+        public static IRazorEngineCompiledTemplate getTemplate(string file)
+        {
+            try
+            {
+                IRazorEngineCompiledTemplate loadedTemplate = RazorEngineCompiledTemplate.LoadFromFile(file);
+                return loadedTemplate;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
         public static void printTemplate(string name, int recursions)
         {
             IRazorEngine razorEngine = new RazorEngine();
@@ -83,8 +95,8 @@ Hello @Model.Name
         {
             IRazorEngine razorEngine = new RazorEngine();
             IRazorEngineCompiledTemplate template = razorEngine.Compile("Hello @Model.Name");
-
             template.SaveToFile(file);
+            
         }
 
         public static void loadHelloTemplate(string name, string file)

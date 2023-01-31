@@ -146,6 +146,19 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "NReco.PdfGenerator/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NReco.PdfGenerator.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NReco.PdfGenerator.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PdfPig/0.1.7": {
         "type": "package",
         "compile": {
@@ -516,6 +529,21 @@
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "NReco.PdfGenerator/1.2.1": {
+      "sha512": "YONMIaSBJO/0FKcXMyO1KZWc83IqfrbBKw5fcRxrwgxzv5r89rh/Z6r7ukuJmx+ra3m6jz6gmaEYXFWV3dKTmg==",
+      "type": "package",
+      "path": "nreco.pdfgenerator/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/NReco.PdfGenerator.dll",
+        "lib/net45/NReco.PdfGenerator.xml",
+        "lib/netstandard2.0/NReco.PdfGenerator.dll",
+        "lib/netstandard2.0/NReco.PdfGenerator.xml",
+        "nreco.pdfgenerator.1.2.1.nupkg.sha512",
+        "nreco.pdfgenerator.nuspec"
       ]
     },
     "PdfPig/0.1.7": {
@@ -913,6 +941,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "NReco.PdfGenerator >= 1.2.1",
       "PdfPig >= 0.1.7",
       "RazorEngineCore >= 2022.8.1"
     ]
@@ -964,6 +993,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "NReco.PdfGenerator": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          },
           "PdfPig": {
             "target": "Package",
             "version": "[0.1.7, )"
