@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using UglyToad.PdfPig.Content;
 
 namespace PdfHtmlTests.src
 {
@@ -36,7 +38,7 @@ Hello @Model.Name
 }";
             return Content;
         }
-        public static IRazorEngineCompiledTemplate getTemplate(string file)
+        public static IRazorEngineCompiledTemplate getCompiledTemplate(string file)
         {
             try
             {
@@ -51,7 +53,7 @@ Hello @Model.Name
         }
         public static void printTemplate(string name, int recursions)
         {
-            IRazorEngine razorEngine = new RazorEngine();
+            IRazorEngine razorEngine = new RazorEngineCore.RazorEngine();
             IRazorEngineCompiledTemplate template = razorEngine.Compile(razorTemplate.weirdLongContent());
             string result = template.Run(new
             {
@@ -95,7 +97,10 @@ Hello @Model.Name
         {
             IRazorEngine razorEngine = new RazorEngine();
             IRazorEngineCompiledTemplate template = razorEngine.Compile("Hello @Model.Name");
-            template.SaveToFile(file);
+            string result = template.Run(new { Name = "name" });
+            
+            //template.SaveToFile(file);
+            File.WriteAllText(file, result);
             
         }
 
@@ -112,12 +117,24 @@ Hello @Model.Name
             }
         }
 
-        public static void saveLongTemplate(string file)
+        public static void saveLongTemplate(string file, string name, int recursions)
         {
-            IRazorEngine razorEngine = new RazorEngine();
+            IRazorEngine razorEngine = new RazorEngineCore.RazorEngine();
             IRazorEngineCompiledTemplate template = razorEngine.Compile(weirdLongContent());
 
-            template.SaveToFile(file);
+            string result = template.Run(new
+            {
+                Name = name,
+                Items = new List<string>()
+                        {
+                            "item 1",
+                            "item 2"
+                        },
+                Recursions = recursions
+            });
+
+            //template.SaveToFile(file);
+            File.WriteAllText(file, result);
         }
         public static void loadLongTemplate(string file, string name, int recursions)
         {
@@ -140,6 +157,18 @@ Hello @Model.Name
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public static void stringFromRazorPage(string file)
+        {
+            //File.WriteAllText("IAmHere.txt", "hello!");
+            //var page = File.ReadAllText(file);
+            IRazorEngine razorEngine = new RazorEngineCore.RazorEngine();
+            IRazorEngineCompiledTemplate compilation = razorEngine.Compile(file);
+            string result = compilation.Run(new { });
+            Console.WriteLine(result);
+            //Console.WriteLine($"{page}");
+            //RazorEngineTemplateBase templ = new 
         }
     }
 }

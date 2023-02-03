@@ -39,17 +39,22 @@ namespace PdfHtmlTests.src
                     razorTemplate.loadHelloTemplate("15Marno", "helloTemplate.html");
                     break;
                 case 16:
-                    razorTemplate.saveLongTemplate("basicTestTemplate2.dll");
+                    razorTemplate.saveLongTemplate("basicTestTemplate2.html", "16Marno", 5);
                     break;
                 case 17:
-                    razorTemplate.loadLongTemplate("basicTestTemplate2.dll", "17Marno", 5);
+                    razorTemplate.loadLongTemplate("basicTestTemplate2.html", "17Marno", 5);
+                    break;
+                case 18:
+                    razorTemplate.stringFromRazorPage("C:\\Users\\malabuschagne\\source\\repos\\PdfHtmlTests\\PdfHtmlTests\\PagesX\\SharedX\\Index.cshtml");
                     break;
                 case 21:
                     NRecoPdfGenerator.helloWorld();
                     break;
                 case 22:
-                    var template = razorTemplate.getTemplate("basicTestTemplate2.dll");
                     NRecoPdfGenerator.htmlTemplateToPdf("helloTemplate.pdf", "helloTemplate.html");
+                    break;
+                case 23:
+                    NRecoPdfGenerator.htmlTemplateToPdf("basicTestTemplate2.pdf", "basicTestTemplate2.html");
                     break;
                 default:
                     break;
